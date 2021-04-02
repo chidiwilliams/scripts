@@ -25,7 +25,7 @@ async function find(url, books = []) {
 
     books.push({
       href: 'https://www.goodreads.com' + titleElem.href,
-      title: titleElem.title,
+      title: titleElem.textContent.trim(),
       author: authorElem.innerHTML,
       rating: textToRating[starsRating.title] || 0,
     });
